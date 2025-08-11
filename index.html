@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datos de Transferencia Bancaria</title>
+<style>
+    body {
+        background-image: url('https://github.com/MavesPro/Spring2025/blob/main/fondospringlink.png?raw=true');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        color: white;
+    }
+
+    h2 {
+        font-size: 36px;
+        color: #FFD700; /* Dorado */
+        text-shadow: 0 0 8px #FFD700, 0 0 20px #FFD700, 0 0 40px #ffec8b;
+        margin-bottom: 30px;
+    }
+
+    .dato {
+        background: rgba(0, 0, 0, 0.45);
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 12px;
+        max-width: 350px;
+        border: 1px solid rgba(255, 215, 0, 0.7);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .dato p {
+        font-size: 16px;
+        margin: 0 0 10px;
+        color: white; /* Contenido en blanco */
+        text-shadow: 0 0 6px rgba(255,255,255,0.5);
+    }
+
+    button {
+        padding: 10px 20px;
+        color: #8B4513; /* Marrón */
+        text-shadow: 0 0 4px rgba(139, 69, 19, 0.7);
+        background: linear-gradient(90deg, #FFD700, #FFC300);
+        border: 1px solid #FFD700;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 0 10px #FFD700, 0 0 20px #ffec8b;
+        transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(90deg, #FFC300, #FFD700);
+        box-shadow: 0 0 15px #FFD700, 0 0 35px #ffec8b;
+    }
+
+    /* Notificación flotante */
+    #toast {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: rgba(0,0,0,0.85);
+        color: #FFD700; /* Dorado */
+        text-shadow: 0 0 5px #FFD700, 0 0 15px #ffec8b;
+        text-align: center;
+        border-radius: 8px;
+        padding: 12px;
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.5s, visibility 0.5s;
+        box-shadow: 0 0 10px #FFD700, 0 0 20px #ffec8b;
+    }
+
+    #toast.show {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+</head>
+<body>
+
+<h2>Datos de Transferencia Bancaria</h2>
+
+<div class="dato">
+    <p>Titular: Alfredo Javier Rivas Articanaba</p>
+    <button onclick="copiarTexto('Alfredo Javier Rivas Articanaba')">Copiar Titular</button>
+</div>
+
+<div class="dato">
+    <p>CI: 7160919</p>
+    <button onclick="copiarTexto('7160919')">Copiar CI</button>
+</div>
+
+<div class="dato">
+    <p>Entidad: ueno bank</p>
+    <button onclick="copiarTexto('ueno bank')">Copiar Entidad</button>
+</div>
+
+<div class="dato">
+    <p>N° de cuenta: 6192282587</p>
+    <button onclick="copiarTexto('6192282587')">Copiar N° de Cuenta</button>
+</div>
+
+<div class="dato">
+    <p>Alias: CI 7160919</p>
+    <button onclick="copiarTexto('CI 7160919')">Copiar Alias</button>
+</div>
+
+<!-- Notificación -->
+<div id="toast">Datos copiados al portapapeles ✅</div>
+
+<script>
+function copiarTexto(texto) {
+    navigator.clipboard.writeText(texto).then(() => {
+        let toast = document.getElementById("toast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2000);
+    }).catch(err => {
+        console.error("Error al copiar los datos: ", err);
+    });
+}
+</script>
+
+</body>
+</html>
