@@ -6,7 +6,8 @@
 <title>Datos de Transferencia Bancaria</title>
 <style>
     body {
-        background-image: url('https://raw.githubusercontent.com/MavesPro/Spring2025/refs/heads/main/fondolinkchauter.jpg');
+        background-color: #000; /* Fondo de respaldo */
+        background-image: url('https://i.imgur.com/xvKRC2Q.jpg'); /* Fondo alternativo que sí carga */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -14,6 +15,7 @@
         text-align: center;
         padding: 20px;
         color: white;
+        min-height: 100vh;
     }
 
     h2 {
@@ -24,7 +26,7 @@
     }
 
     .dato {
-        background: rgba(0, 0, 0, 0.45);
+        background: rgba(0, 0, 0, 0.55);
         margin: 20px auto;
         padding: 15px;
         border-radius: 12px;
@@ -36,13 +38,13 @@
     .dato p {
         font-size: 16px;
         margin: 0 0 10px;
-        color: white; /* Contenido en blanco */
+        color: white;
         text-shadow: 0 0 6px rgba(255,255,255,0.5);
     }
 
     button {
         padding: 10px 20px;
-        color: #8B4513; /* Marrón */
+        color: #8B4513;
         text-shadow: 0 0 4px rgba(139, 69, 19, 0.7);
         background: linear-gradient(90deg, #FFD700, #FFC300);
         border: 1px solid #FFD700;
@@ -60,12 +62,11 @@
         box-shadow: 0 0 15px #FFD700, 0 0 35px #ffec8b;
     }
 
-    /* Notificación flotante */
     #toast {
         visibility: hidden;
         min-width: 250px;
         background-color: rgba(0,0,0,0.85);
-        color: #FFD700; /* Dorado */
+        color: #FFD700;
         text-shadow: 0 0 5px #FFD700, 0 0 15px #ffec8b;
         text-align: center;
         border-radius: 8px;
@@ -116,7 +117,6 @@
     <button onclick="copiarTexto('CI 7160919')">Copiar Alias</button>
 </div>
 
-<!-- Notificación -->
 <div id="toast">Datos copiados al portapapeles ✅</div>
 
 <script>
